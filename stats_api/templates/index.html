@@ -1,16 +1,42 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
+
+<!--    Scripts to bring in jQuery and styles-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title></title>
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/css/index.css' %}">
+
+<!--    end scripts-->
+
+    <title>HyperQube Coding Challenge</title>
+
 </head>
+
 <body>
 
 
-<h1>test 3</h1>
+    <header>
+
+
+    </header>
+
+    <section class="memoryDiv">
+
+        <div id="memoryAvailable"></div>
+        <div id="memoryUsed"></div>
+
+    </section>
 
 <script type="text/javascript">
+
+    memAvail = document.querySelector("#memoryAvailable");
+    memUsed = document.querySelector("#memoryUsed");
 
 
     (async function pullStats(){
@@ -20,12 +46,20 @@
                     //update dashboard
                     console.log(data)
                     console.log(data.CPUAvailablePercent)
-                    //setup next poll recursively
+
+                    memAvail.textContent = "Memory Available: " + data.availableMemoryPercent+"%";
+                    memUsed.textContent = "Memory Used: " + data.usedMemoryPercent+"%";
+                        //setup next poll recursively
                     pullStats();
                 },
                 dataType:"json"});
         },1000);
     })();
+
+
+
+
+
 </script>
 </body>
 </html>
