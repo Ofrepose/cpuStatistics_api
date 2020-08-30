@@ -1,105 +1,113 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
+    <!--    Scripts to bring in axios and styles-->
 
-<!--    Scripts to bring in jQuery and styles-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/css/index.css' %}">
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'styles/css/index.css' %}"
+    />
 
-    <link rel="shortcut icon" type="image/jpg" href="{% static 'images/logo.ico' %}"/>
+    <link
+            rel="shortcut icon"
+            type="image/jpg"
+            href="{% static 'images/logo.ico' %}"
+    />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!--    end scripts-->
+    <!--    end scripts-->
 
     <title>HyperQube Coding Challenge</title>
-
 </head>
 
 <body>
+<header>
+    <div id="hyperQubeLogo"></div>
 
+    <div id="subTitle">Coding Challenge</div>
+</header>
 
-    <header>
-
-        <div id="hyperQubeLogo"></div>
-
-        <div id="subTitle">Coding Challenge</div>
-
-
-    </header>
-
-    <section id="infoDiv">
-
-        <section class="memoryDiv">
-
-            <div id="memoryAvailable">Memory Available:</div>
-            <div id="memoryUsed">Memory Used:</div><br>
-            <div id="cpuAvailable">CPU Available:</div>
-            <div id="cpuUsed">CPU Used:</div><br>
-            <div id="diskAvailable">Disk Available:</div>
-            <div id="diskUsed">Disk Used:</div>
-
-        </section>
-
-        <section id="gaugeSection">
-
-            <div id="chart_div"></div>
-
-        </section>
-
+<section id="infoDiv">
+    <section class="memoryDiv">
+        <div id="memoryAvailable">Memory Available:</div>
+        <div id="memoryUsed">Memory Used:</div>
+        <br />
+        <div id="cpuAvailable">CPU Available:</div>
+        <div id="cpuUsed">CPU Used:</div>
+        <br />
+        <div id="diskAvailable">Disk Available:</div>
+        <div id="diskUsed">Disk Used:</div>
     </section>
 
-    <section id="apiEndPoints">
-
-        <h1 class="title">REST API Endpoints</h1>
-
-        <div class="apiBlock">
-
-            <div class="apiTitle"><a href="https://cpu-stats-api-heroku.herokuapp.com/api/?format=json">All stats</a></div>
-
-            <div class="apiAddress">GET /api/</div>
-
-        </div>
-
-        <div class="apiBlock">
-
-            <div class="apiTitle"><a href="https://cpu-stats-api-heroku.herokuapp.com/api/memory/?format=json">Memory</a></div>
-
-            <div class="apiAddress">GET /api/memory/</div>
-
-        </div>
-
-        <div class="apiBlock">
-
-            <div class="apiTitle"><a href="https://cpu-stats-api-heroku.herokuapp.com/api/cpu/?format=json">CPU</a></div>
-
-            <div class="apiAddress">GET /api/cpu/</div>
-
-        </div>
-
-        <div class="apiBlock">
-
-            <div class="apiTitle"><a href="https://cpu-stats-api-heroku.herokuapp.com/api/disk/?format=json">Disk</a></div>
-
-            <div class="apiAddress">GET /api/disk/</div>
-
-        </div>
-
+    <section id="gaugeSection">
+        <div id="chart_div"></div>
     </section>
+</section>
 
+<section id="apiEndPoints">
+    <h1 class="title">REST API Endpoints</h1>
 
+    <div class="apiBlock">
+        <div class="apiTitle">
+            <a href="https://cpu-stats-api-heroku.herokuapp.com/api/?format=json"
+            >All stats</a
+            >
+        </div>
 
+        <div class="apiAddress">GET /api/</div>
+    </div>
+
+    <div class="apiBlock">
+        <div class="apiTitle">
+            <a
+                    href="https://cpu-stats-api-heroku.herokuapp.com/api/memory/?format=json"
+            >Memory</a
+            >
+        </div>
+
+        <div class="apiAddress">GET /api/memory/</div>
+    </div>
+
+    <div class="apiBlock">
+        <div class="apiTitle">
+            <a href="https://cpu-stats-api-heroku.herokuapp.com/api/cpu/?format=json"
+            >CPU</a
+            >
+        </div>
+
+        <div class="apiAddress">GET /api/cpu/</div>
+    </div>
+
+    <div class="apiBlock">
+        <div class="apiTitle">
+            <a href="https://cpu-stats-api-heroku.herokuapp.com/api/disk/?format=json"
+            >Disk</a
+            >
+        </div>
+
+        <div class="apiAddress">GET /api/disk/</div>
+    </div>
+</section>
+
+<!--scripting for gauges and axios calls-->
+
+<script
+        type="text/javascript"
+        src="https://www.gstatic.com/charts/loader.js"
+></script>
+
+<script
+        type="text/javascript"
+        src="{% static 'scripts/gauges.js' %}"
+></script>
+
+<!--end scripts-->
 </body>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="{% static 'scripts/gauges.js' %}"></script>
-
-
 </html>
-

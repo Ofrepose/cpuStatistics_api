@@ -48,7 +48,7 @@ header #hyperQubeLogo {
 header #subTitle {
   position: absolute;
   top: 20px;
-  font-family: 'gProItalic';
+  font-family: "gProItalic", serif;
   left: 50%;
   transform: translate(-50%, 0);
   width: 1050px;
@@ -78,7 +78,7 @@ header #subTitle {
   flex-wrap: wrap;
   justify-content: center;
   text-align: left;
-  font-family: 'gPro';
+  font-family: "gPro", serif;
   letter-spacing: 2px;
 }
 @media (max-width: 1050px) {
@@ -158,7 +158,7 @@ header #subTitle {
 }
 #apiEndPoints .title {
   width: 100%;
-  font-family: 'gProItalic';
+  font-family: "gProItalic", serif;
   text-align: left;
   font-size: 35px;
   letter-spacing: 2.5px;
@@ -184,7 +184,7 @@ header #subTitle {
 }
 #apiEndPoints .apiBlock .apiTitle {
   font-size: 20px;
-  font-family: 'gPro';
+  font-family: "gPro", serif;
   margin-right: 20px;
   letter-spacing: 2px;
   width: 100px;
@@ -203,7 +203,7 @@ header #subTitle {
   text-decoration: none;
 }
 #apiEndPoints .apiBlock .apiTitle a:visited {
-  color: default;
+  color: inherit;
   text-decoration: none;
 }
 #apiEndPoints .apiBlock .apiAddress {
@@ -225,7 +225,7 @@ header #subTitle {
   }
 }
 .memoryDiv {
-  font-family: 'gPro';
+  font-family: "gPro", serif;
   font-size: 20px;
   letter-spacing: 3px;
   color: white;
@@ -243,104 +243,21 @@ body {
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 html {
   font-size: 62.5%;
-}
-input,
-select,
-textarea {
-  margin: 5px 0 0;
-  display: block;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 10px;
-  transition: all 0.3s;
-  font-size: 1.4rem;
-  letter-spacing: 0.5px;
-  background-color: white;
-}
-select {
-  height: 40px;
-  width: 325px;
-}
-select:focus {
-  outline: none;
-  border-color: #a8b2b2;
-}
-input:focus {
-  outline: none;
-  border-color: #282c34;
-}
-input::placeholder {
-  color: #a8b2b2;
-}
-button {
-  width: 150px;
-  display: inline-block;
-  padding: 8px 11px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  border: 0;
-  border-radius: 5px;
-  letter-spacing: 2px;
-  outline: none;
-  background-color: #4dd0e1;
-  background-image: linear-gradient(to right, #4dd0e1, #1ee7e2);
-  color: #fff;
-  margin: 10px auto 0px auto;
-  cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-@media (max-width: 800px) {
-  button {
-    font-size: 1.2rem;
-  }
-}
-button:hover {
-  background-image: none;
-  background-color: #4dd0e1;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
-}
-button:disabled {
-  background-image: none;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.1);
-  cursor: not-allowed;
-}
-.error {
-  font-size: 12px;
-  width: 100%;
-  color: red;
-}
-.terms {
-  display: inline-block;
-  align-self: self-start;
-}
-.terms input {
-  width: 15px;
-  display: inline-block;
-  margin-right: 5px;
-  text-align: left;
-}
-input[type='checkbox'] {
-  text-align: left;
-}
-pre {
-  font-size: 20px;
 }
 a {
   color: inherit;
   text-decoration: none;
 }
 a:visited {
-  color: default;
+  color: inherit;
   text-decoration: none;
 }
