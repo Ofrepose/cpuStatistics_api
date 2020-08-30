@@ -25,7 +25,7 @@ class GetStats():
 
     def getCPU(self):
         psutil.cpu_percent(interval=None)
-        cpuUsed = psutil.cpu_percent(interval=2, percpu=True)
+        cpuUsed = psutil.cpu_percent(interval=1, percpu=True)
         result = functools.reduce(lambda a,b : a+b,cpuUsed)
         return float('{:0.2f}'.format(result/psutil.cpu_count(logical=True)))
 

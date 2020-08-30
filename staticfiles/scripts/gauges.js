@@ -57,7 +57,7 @@ function drawChart() {
                     pullStats();
                 },
                 dataType:"json"});
-        },1000);
+        },100);
     })();
 
 }
