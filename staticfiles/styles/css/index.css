@@ -93,7 +93,7 @@ header #subTitle {
 }
 @media (max-width: 800px) {
   #infoDiv .memoryDiv {
-    width: 55%;
+    width: 90%;
     font-size: 15px;
     margin-bottom: 30px;
   }
@@ -192,7 +192,7 @@ header #subTitle {
 @media (max-width: 800px) {
   #apiEndPoints .apiBlock .apiTitle {
     font-size: 16px;
-    width: 65px;
+    width: 70px;
     margin-right: 5px;
   }
 }
