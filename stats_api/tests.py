@@ -6,15 +6,16 @@ from django.urls import reverse
 client = Client()
 
 #Put endpoints into list for testing
-endPoints = ['/','/api/','/memory','cpu','disks']
+endPoints = ['/','/api/','/api/memory/','/api/cpu/','/api/disk/']
 
 #Put host url for testing - localhost or heroku in this case
-url = 'https://localhost:8000/'
+url = 'https://localhost:8000'
 
 
 """Test views on apis"""
 class ViewsTester(TestCase):
     def setup(self):
+        print('at top of test')
         self.client = Client()
 
     def testViews(self):
@@ -22,5 +23,7 @@ class ViewsTester(TestCase):
         self.assertTemplateUsed(self.client.get(url), 'index.html')
         self.assertContains(self.client.get(url), 'Coding Challenge')
         #Iterates through endPoints list and checks that all return status 200
-        map(lambda item:self.assertEqual(self.client.get(url+item).status_code, 200),endPoints)
-
+        for e in endPoints:
+            print(f'Testing end point: {e}')
+            self.assertEqual(self.client.get(url+e).status_code, 200)
+            print(f'Test passed with status: 200')
