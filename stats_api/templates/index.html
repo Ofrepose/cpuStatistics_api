@@ -23,44 +23,79 @@
 
     <header>
 
+        <div id="hyperQubeLogo"></div>
+
+        <div id="subTitle">Coding Challenge</div>
+
 
     </header>
 
-    <section class="memoryDiv">
+    <section id="infoDiv">
 
-        <div id="memoryAvailable"></div>
-        <div id="memoryUsed"></div>
+        <section class="memoryDiv">
+
+            <div id="memoryAvailable">Memory Available:</div>
+            <div id="memoryUsed">Memory Used:</div><br>
+            <div id="cpuAvailable">CPU Available:</div>
+            <div id="cpuUsed">CPU Used:</div><br>
+            <div id="diskAvailable">Disk Available:</div>
+            <div id="diskUsed">Disk Used:</div>
+
+        </section>
+
+        <section id="gaugeSection">
+
+            <div id="chart_div"></div>
+
+        </section>
 
     </section>
 
-<script type="text/javascript">
+    <section id="apiEndPoints">
 
-    memAvail = document.querySelector("#memoryAvailable");
-    memUsed = document.querySelector("#memoryUsed");
+        <h1 class="title">RESTAPI Endpoints Docs</h1>
+
+        <div class="apiBlock">
+
+            <div class="apiTitle"><a href="https://cpu-stats-api-heroku.herokuapp.com/api/">All Stats</a></div>
+
+            <div class="apiAddress">GET /api/</div>
+
+        </div>
+
+        <div class="apiBlock">
+
+            <div class="apiTitle"><a href="https://cpu-stats-api-heroku.herokuapp.com/api/memory/">Memory</a></div>
+
+            <div class="apiAddress">GET /api/memory/</div>
+
+        </div>
+
+        <div class="apiBlock">
+
+            <div class="apiTitle"><a href="https://cpu-stats-api-heroku.herokuapp.com/api/cpu/">CPU</a></div>
+
+            <div class="apiAddress">GET /api/cpu/</div>
+
+        </div>
+
+        <div class="apiBlock">
+
+            <div class="apiTitle"><a href="https://cpu-stats-api-heroku.herokuapp.com/api/disk/">Disk</a></div>
+
+            <div class="apiAddress">GET /api/disk/</div>
+
+        </div>
+
+    </section>
 
 
-    (async function pullStats(){
-        setTimeout(async()=>{
-            await $.ajax({url:'http://localhost:8000/api/?format=json',
-                success:function(data){
-                    //update dashboard
-                    console.log(data)
-                    console.log(data.CPUAvailablePercent)
 
-                    memAvail.textContent = "Memory Available: " + data.availableMemoryPercent+"%";
-                    memUsed.textContent = "Memory Used: " + data.usedMemoryPercent+"%";
-                        //setup next poll recursively
-                    pullStats();
-                },
-                dataType:"json"});
-        },1000);
-    })();
-
-
-
-
-
-</script>
 </body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="{% static 'scripts/gauges.js' %}"></script>
+
+
 </html>
 

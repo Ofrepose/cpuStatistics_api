@@ -21,12 +21,12 @@ class GetAllStats(APIView):
         pullCpu = statistics.getCPU()
         pullMemory = statistics.getRam()
         return Response({
-        'CPUUsedPercent':pullCpu,
-        'CPUAvailablePercent':100 - pullCpu,
-        'availableMemoryPercent':pullMemory[0].get('availableRam'),
-        'usedMemoryPercent':pullMemory[0].get('usedRam'),
-        'usedDiskSpacePercent':statistics.getDiskInfo()[-1],
-        'availableDiskSpacePercent':100-statistics.getDiskInfo()[-1],
+        'CPUUsedPercent':'{:0.2f}'.format(pullCpu),
+        'CPUAvailablePercent':'{:0.2f}'.format(100 - pullCpu),
+        'availableMemoryPercent':'{:0.2f}'.format(pullMemory[0].get('availableRam')),
+        'usedMemoryPercent':'{:0.2f}'.format(pullMemory[0].get('usedRam')),
+        'usedDiskSpacePercent':'{:0.2f}'.format(statistics.getDiskInfo()[-1]),
+        'availableDiskSpacePercent':'{:0.2f}'.format(100-statistics.getDiskInfo()[-1]),
         #'temps':statistics.getTemps(),
         'hostUpTime':statistics.getUpTime(),
         })
