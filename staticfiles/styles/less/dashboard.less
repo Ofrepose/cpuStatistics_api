@@ -7,17 +7,24 @@ header{
   #hyperQubeLogo{
     background-image: url("../../images/hyperQubeLogo.png");
     height: 250px;
-    //background-size: cover;
     width: 1050px;
     background-repeat: no-repeat;
     object-position: top;
     background-position: center;
+    @media @tablet{
+      width: 100%;
+      background-size: contain;
+    }
+
+    @media @mobile{
+
+    }
 
 
   }
 
   #subTitle{
-    position: fixed;
+    position: absolute;
     top: 20px;
     font-family: 'gProItalic';
     left: 50%;
@@ -28,6 +35,17 @@ header{
     font-size: 35px;
     letter-spacing: 2.5px;
     height: 35px;
+
+    @media @tablet{
+      width: 80%;
+      top:35px;
+      font-size: 25px;
+    }
+
+    @media @mobile{
+      text-align: center;
+      width: 100%;
+    }
 
   }
 
@@ -44,12 +62,21 @@ header{
   font-family: 'gPro';
   letter-spacing: 2px;
 
+  @media @tablet{
+    width: 95%;
+  }
+
 
   .memoryDiv{
     width: 40%;
     justify-content: center;
     align-content: center;
     height: 220px;
+
+    @media @mobile{
+      width: 55%;
+      font-size: 15px;
+    }
   }
 
   #gaugeSection{
@@ -57,7 +84,50 @@ header{
     display: flex;
     align-content: center;
     justify-content: center;
-    height: 220px;
+    //height: 220px;
+
+    @media @mobile{
+      width: 100%;
+    }
+
+    #chart_div{
+      @media @mobile {
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+      }
+
+      table{
+        @media @mobile {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+
+        tbody{
+          @media @mobile {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+          }
+
+          tr{
+            @media @mobile {
+              display: flex;
+              flex-wrap: wrap;
+              width: 95%;
+              justify-content: center;
+            }
+          }
+        }
+
+        svg{
+          @media @mobile {
+            width: 95%;
+          }
+        }
+      }
+    }
   }
 
 }
@@ -71,6 +141,10 @@ header{
   color: white;
   margin: 30px auto;
 
+  @media @tablet{
+    width: 95%;
+  }
+
   .title{
     width: 100%;
     font-family: 'gProItalic';
@@ -80,6 +154,10 @@ header{
     margin: auto;
     margin-bottom: 15px;
     border-bottom: #999999 .5px solid;
+
+    @media @mobile{
+      font-size: 25px;
+    }
 
   }
 
@@ -100,6 +178,12 @@ header{
       margin-right: 20px;
       letter-spacing: 2px;
       width: 100px;
+
+      @media @mobile{
+        font-size: 16px;
+        width: 65px;
+        margin-right: 5px;
+      }
 
       a{
         font-size: inherit;
@@ -124,6 +208,15 @@ header{
       background-color: #282c34;
       padding-right: 15px;
       padding-left: 15px;
+
+      @media @mobile{
+        font-size: 17px;
+        height: 22px;
+        line-height: 17px;
+        padding-left: 2.5px;
+        padding-right: 2.5px;
+
+      }
     }
 
   }
