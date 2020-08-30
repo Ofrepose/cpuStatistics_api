@@ -1,3 +1,5 @@
+
+/*Import google charts for gauges*/
 google.charts.load('current', {'packages':['gauge']});
 google.charts.setOnLoadCallback(drawChart);
 
