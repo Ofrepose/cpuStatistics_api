@@ -9,7 +9,7 @@ client = Client()
 endPoints = ['/','/api/','/api/memory/','/api/cpu/','/api/disk/']
 
 #Put host url for testing - localhost or heroku in this case
-url = 'https://localhost:8000'
+url = 'https://cpu-stats-api-heroku.herokuapp.com'
 
 
 """Test views on apis"""
