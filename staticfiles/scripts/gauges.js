@@ -32,7 +32,7 @@ function drawChart() {
     // API call for data updates
     (async function pullStats(){
         setTimeout(async()=>{
-            await $.ajax({url:'http://localhost:8000/api/?format=json',
+            await $.ajax({url:'https://cpu-stats-api-heroku.herokuapp.com/api/?format=json',
                 success:function(api_data){
                     //update dashboard
                     // Set Available Memory Gauge
