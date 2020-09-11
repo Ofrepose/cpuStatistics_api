@@ -1,6 +1,6 @@
 # Remote Server Statistics Dashboard
 
-CPU-Statistics is a Python-Django application that can give you remote access to stats on your server.
+CPU-Statistics is a Python-Django application that can give you remote access to stats on your server.<br/>
 Project example --> [Product Preview](https://cpu-stats-api-heroku.herokuapp.com/)
 
 ## Installation
