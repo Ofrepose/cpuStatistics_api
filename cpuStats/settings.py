@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', ')&#-t61cnj1t=ch(lnx!43l67r)wwl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.7.25','localhost','cpu-stats-api-heroku.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0:5000','localhost','http://localhost:5000','cpu-stats-api-heroku.herokuapp.com']
 
 
 # Application definition

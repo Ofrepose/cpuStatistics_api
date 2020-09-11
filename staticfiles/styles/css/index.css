@@ -30,6 +30,7 @@ header {
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
+  margin-bottom: 200px;
 }
 header #hyperQubeLogo {
   background-image: url("../../images/hyperQubeLogo.png");

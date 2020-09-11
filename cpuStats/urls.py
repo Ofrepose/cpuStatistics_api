@@ -24,6 +24,7 @@ urlpatterns = [
     path('api/memory/',views.GetMemoryInfo.as_view()),
     path('api/disk/',views.GetDiskInfo.as_view()),
     path('api/cpu/',views.GetCpuInfo.as_view()),
+    path('api/net/',views.GetNetworkStats.as_view()),
     path('', views.Dashboard.as_view()),
 
 ]

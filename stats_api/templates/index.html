@@ -24,12 +24,12 @@
 
     <!--    end scripts-->
 
-    <title>HyperQube Coding Challenge</title>
+    <title></title>
 </head>
 
 <body>
 <header>
-    <div id="hyperQubeLogo"></div>
+    <div id="yourLogo"></div>
 
     <div id="subTitle">Coding Challenge</div>
 </header>
@@ -44,6 +44,15 @@
         <br />
         <div id="diskAvailable">Disk Available:</div>
         <div id="diskUsed">Disk Used:</div>
+        <br />
+        <div id="bs">bytes Sent:</div>
+        <div id="br">bytes Received:</div>
+        <div id="ps">Packets Sent:</div>
+        <div id="pr">Packets Received:</div>
+        <div id="ei">Errors Incoming:</div>
+        <div id="eo">Errors Outgoing:</div>
+        <div id="pi">Packets Dropped In:</div>
+        <div id="po">Packets Dropped Out:</div>
     </section>
 
     <section id="gaugeSection">
@@ -94,9 +103,24 @@
 
         <div class="apiAddress">GET /api/disk/</div>
     </div>
+
+    <div class="apiBlock">
+        <div class="apiTitle">
+            <a href="https://cpu-stats-api-heroku.herokuapp.com/api/net/?format=json"
+            >Network</a
+            >
+        </div>
+
+        <div class="apiAddress">GET /api/net/</div>
+    </div>
 </section>
 
 <!--scripting for gauges and axios calls-->
+
+<script
+        type="text/javascript"
+        src="{% static 'scripts/customizeIt.js' %}"
+></script>
 
 <script
         type="text/javascript"
@@ -107,6 +131,8 @@
         type="text/javascript"
         src="{% static 'scripts/gauges.js' %}"
 ></script>
+
+
 
 <!--end scripts-->
 </body>

@@ -20,6 +20,7 @@ class GetAllStats(APIView):
         #sets cpu interval at time of call {set so we can give accurate used vs available}
         pullCpu = statistics.getCPU()
         pullMemory = statistics.getRam()
+        pullNet = statistics.getNetworkStats()
         return Response({
         'CPUUsedPercent':'{:0.2f}'.format(pullCpu),
         'CPUAvailablePercent':'{:0.2f}'.format(100 - pullCpu),
@@ -29,6 +30,14 @@ class GetAllStats(APIView):
         'availableDiskSpacePercent':'{:0.2f}'.format(100-statistics.getDiskInfo()[-1]),
         #'temps':statistics.getTemps(),
         'hostUpTime':statistics.getUpTime(),
+        'bytes_sent':pullNet[0],
+        'bytes_received':pullNet[1],
+        'packets_sent':pullNet[2],
+        'packets_received':pullNet[3],
+        'errorsIn':pullNet[4],
+        'errorsOut':pullNet[5],
+        'droppedIn':pullNet[6],
+        'droppedOut':pullNet[7],
         })
 
 
@@ -63,4 +72,20 @@ class GetCpuInfo(APIView):
         return Response({
             'CPUUsedPercent':pullCpu,
             'CPUAvailablePercent':100 - pullCpu,
+        })
+
+class GetNetworkStats(APIView):
+    """Get NETWORK statistics"""
+
+    def get(self, request, format=None):
+        pullNet = statistics.getNetworkStats()
+        return Response({
+            'bytes_sent':pullNet[0],
+            'bytes_received':pullNet[1],
+            'packets_sent':pullNet[2],
+            'packets_received':pullNet[3],
+            'errorsIn':pullNet[4],
+            'errorsOut':pullNet[5],
+            'droppedIn':pullNet[6],
+            'droppedOut':pullNet[7],
         })

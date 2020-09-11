@@ -43,3 +43,8 @@ class GetStats:
     def getUpTime(self):
         return datetime.datetime.fromtimestamp(psutil.boot_time()).strftime('%Y-%m-%d %H:%M:%S'
                 )
+
+    def getNetworkStats(self):
+        networkStats = psutil.net_io_counters()
+        return networkStats
+
